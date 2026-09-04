@@ -1,33 +1,1588 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shil Gawande | Portfolio</title>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description"
+        content="Shil Gawande - Data, BI, AI and Automation portfolio featuring analytics, data engineering, Salesforce, AI and business intelligence projects." />
+
+  <meta name="keywords"
+        content="Shil Gawande, Data Analyst, BI Analyst, Python, SQL, Power BI, AI, Data Engineering, Salesforce, Analytics" />
+
+  <meta name="author"
+        content="Shil Gawande" />
+
+  <title>Shil Gawande | Data • BI • AI • Automation</title>
+
+  <style>
+
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1729;
+      --card: rgba(18, 31, 52, 0.82);
+      --card-2: rgba(25, 41, 68, 0.85);
+
+      --text: #f5f7fb;
+      --muted: #aab6ca;
+
+      --primary: #63a4ff;
+      --secondary: #7af0d2;
+      --accent: #bd8cff;
+
+      --border: rgba(255,255,255,0.10);
+
+      --shadow:
+        0 18px 45px rgba(0,0,0,0.28);
+
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 20% 0%,
+          rgba(67,126,255,0.16),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 90% 15%,
+          rgba(122,240,210,0.10),
+          transparent 26%
+        ),
+        var(--bg);
+
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--max-width)
+      );
+
+      margin: auto;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background:
+        rgba(7,17,31,0.82);
+
+      backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span {
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+
+    /* HERO */
+
+    .hero {
+      min-height: 86vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns:
+        1.3fr 0.7fr;
+
+      align-items: center;
+
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-bottom: 22px;
+
+      padding: 8px 14px;
+
+      border:
+        1px solid rgba(122,240,210,0.28);
+
+      border-radius: 999px;
+
+      color: var(--secondary);
+
+      font-size: 0.86rem;
+      font-weight: 700;
+
+      background:
+        rgba(122,240,210,0.05);
+    }
+
+    h1 {
+      font-size:
+        clamp(3rem, 7vw, 5.7rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -4px;
+
+      margin-bottom: 26px;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          100deg,
+          var(--primary),
+          var(--secondary),
+          var(--accent)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-role {
+      font-size:
+        clamp(1.2rem, 2.5vw, 1.7rem);
+
+      font-weight: 700;
+
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+
+      font-size: 1.08rem;
+
+      max-width: 720px;
+
+      margin-bottom: 34px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+    }
+
+    .button {
+      padding: 13px 20px;
+
+      border-radius: 11px;
+
+      font-weight: 750;
+
+      border:
+        1px solid var(--border);
+
+      transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+    }
+
+    .button:hover {
+      transform:
+        translateY(-2px);
+    }
+
+    .button-primary {
+      color: #04131d;
+
+      background:
+        linear-gradient(
+          100deg,
+          var(--secondary),
+          #9af6df
+        );
+
+      border: none;
+    }
+
+    .button-secondary {
+      background:
+        rgba(255,255,255,0.04);
+    }
+
+    .button-secondary:hover {
+      border-color:
+        rgba(99,164,255,.55);
+    }
+
+
+    /* HERO PROFILE CARD */
+
+    .profile-card {
+      position: relative;
+
+      padding: 30px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 26px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(22,37,64,.92),
+          rgba(11,22,39,.90)
+        );
+
+      box-shadow:
+        var(--shadow);
+
+      overflow: hidden;
+    }
+
+    .profile-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 190px;
+      height: 190px;
+
+      border-radius: 50%;
+
+      top: -80px;
+      right: -70px;
+
+      background:
+        rgba(99,164,255,.18);
+
+      filter: blur(10px);
+    }
+
+    .avatar {
+      width: 78px;
+      height: 78px;
+
+      border-radius: 22px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 22px;
+
+      font-size: 1.8rem;
+      font-weight: 900;
+
+      color: #04131d;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--secondary),
+          var(--primary)
+        );
+    }
+
+    .profile-card h3 {
+      font-size: 1.35rem;
+
+      margin-bottom: 8px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+    }
+
+    .mini-list {
+      margin-top: 24px;
+
+      display: grid;
+
+      gap: 12px;
+    }
+
+    .mini-item {
+      padding: 13px 15px;
+
+      border-radius: 12px;
+
+      background:
+        rgba(255,255,255,.035);
+
+      border:
+        1px solid var(--border);
+
+      font-size: .92rem;
+
+      color: var(--muted);
+    }
+
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-label {
+      color: var(--secondary);
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-size: .78rem;
+      font-weight: 800;
+
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size:
+        clamp(2rem, 4vw, 3.1rem);
+
+      letter-spacing: -1.8px;
+
+      margin-bottom: 14px;
+    }
+
+    .section-description {
+      color: var(--muted);
+
+      max-width: 760px;
+
+      margin-bottom: 42px;
+    }
+
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 35px;
+    }
+
+    .about-panel {
+      border:
+        1px solid var(--border);
+
+      background: var(--card);
+
+      border-radius: 20px;
+
+      padding: 28px;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+
+      margin-top: 12px;
+    }
+
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 16px;
+    }
+
+    .skill-group {
+      padding: 22px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 17px;
+
+      background:
+        rgba(255,255,255,.03);
+    }
+
+    .skill-group h3 {
+      margin-bottom: 14px;
+
+      font-size: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+
+      border-radius: 8px;
+
+      font-size: .8rem;
+
+      background:
+        rgba(99,164,255,.08);
+
+      border:
+        1px solid rgba(99,164,255,.16);
+
+      color: #cadcff;
+    }
+
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 22px;
+    }
+
+    .project-card {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      min-height: 390px;
+
+      padding: 28px;
+
+      border-radius: 22px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20,35,59,.92),
+          rgba(12,23,41,.94)
+        );
+
+      overflow: hidden;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease;
+    }
+
+    .project-card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(99,164,255,.40);
+    }
+
+    .project-number {
+      font-size: .78rem;
+      font-weight: 800;
+
+      color: var(--secondary);
+
+      margin-bottom: 18px;
+    }
+
+    .project-card h3 {
+      font-size: 1.42rem;
+
+      line-height: 1.25;
+
+      margin-bottom: 14px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+
+      font-size: .94rem;
+
+      margin-bottom: 20px;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-bottom: 24px;
+    }
+
+    .project-tech span {
+      font-size: .74rem;
+
+      padding: 5px 8px;
+
+      border-radius: 7px;
+
+      border:
+        1px solid var(--border);
+
+      color: #c7d2e7;
+
+      background:
+        rgba(255,255,255,.035);
+    }
+
+    .project-actions {
+      margin-top: auto;
+
+      display: flex;
+
+      gap: 10px;
+    }
+
+    .project-link {
+      padding: 10px 14px;
+
+      border-radius: 9px;
+
+      font-size: .86rem;
+      font-weight: 700;
+
+      background:
+        rgba(255,255,255,.05);
+
+      border:
+        1px solid var(--border);
+    }
+
+    .project-link:hover {
+      border-color:
+        var(--secondary);
+
+      color: var(--secondary);
+    }
+
+
+    /* WORK TYPES */
+
+    .capability-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .capability {
+      padding: 25px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        rgba(255,255,255,.025);
+    }
+
+    .capability-icon {
+      font-size: 1.5rem;
+
+      margin-bottom: 14px;
+    }
+
+    .capability h3 {
+      margin-bottom: 8px;
+    }
+
+    .capability p {
+      color: var(--muted);
+
+      font-size: .9rem;
+    }
+
+
+    /* CTA */
+
+    .cta {
+      border:
+        1px solid var(--border);
+
+      border-radius: 28px;
+
+      padding: 55px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(99,164,255,.13),
+          rgba(122,240,210,.07)
+        );
+    }
+
+    .cta h2 {
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: var(--muted);
+
+      max-width: 650px;
+
+      margin:
+        0 auto 28px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0;
+
+      border-top:
+        1px solid var(--border);
+
+      color: var(--muted);
+
+      font-size: .9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 18px;
+    }
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 920px) {
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        max-width: 550px;
+      }
+
+      .skills-grid,
+      .capability-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -2.5px;
+      }
+    }
+
+
+    @media (max-width: 650px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .skills-grid,
+      .capability-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        padding: 34px 22px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-  <h1>Shil Gawande</h1>
 
-  <h2>Data • Analytics • AI • Automation</h2>
+<!-- NAVIGATION -->
 
-  <p>
-    Welcome to my professional portfolio. Here I showcase my projects,
-    technical skills and work across data, analytics, AI and automation.
-  </p>
+<nav>
+  <div class="container nav-inner">
 
-  <h2>Projects</h2>
-
-  <p>My featured projects will be added here.</p>
-
-  <h2>Contact</h2>
-
-  <p>
-    <a href="https://github.com/gawandeshil03-ops">
-      View my GitHub
+    <a class="brand"
+       href="#home">
+      Shil<span>.</span>
     </a>
-  </p>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<!-- HERO -->
+
+<header class="hero"
+        id="home">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        ● Open to Data, BI & Technology Opportunities
+      </div>
+
+      <h1>
+        Shil
+        <span class="gradient-text">
+          Gawande
+        </span>
+      </h1>
+
+      <div class="hero-role">
+        Data • BI • AI • Automation
+      </div>
+
+      <p class="hero-description">
+
+        I build data-driven projects across analytics,
+        business intelligence, data engineering,
+        enterprise automation and applied AI.
+        This portfolio brings together selected work
+        built with Python, SQL, Power BI, Salesforce,
+        APIs, data pipelines and modern AI systems.
+
+      </p>
+
+      <div class="button-row">
+
+        <a class="button button-primary"
+           href="#projects">
+          Explore Projects
+        </a>
+
+        <a class="button button-secondary"
+           href="https://github.com/gawandeshil03-ops"
+           target="_blank">
+          GitHub
+        </a>
+
+        <a class="button button-secondary"
+           href="https://www.linkedin.com/in/shilgawande2004"
+           target="_blank">
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="profile-card">
+
+      <div class="avatar">
+        SG
+      </div>
+
+      <h3>
+        Building beyond dashboards
+      </h3>
+
+      <p>
+        Projects spanning analytics,
+        engineering, automation and AI.
+      </p>
+
+      <div class="mini-list">
+
+        <div class="mini-item">
+          📊 Business Intelligence & Analytics
+        </div>
+
+        <div class="mini-item">
+          ⚙️ Data Pipelines & Automation
+        </div>
+
+        <div class="mini-item">
+          🤖 Applied AI Systems
+        </div>
+
+        <div class="mini-item">
+          ☁️ Enterprise & Data Platforms
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-label">
+      About
+    </div>
+
+    <h2 class="section-title">
+      Turning data into working systems
+    </h2>
+
+    <p class="section-description">
+
+      My portfolio focuses on solving practical
+      business and technology problems using
+      analytics, data platforms, automation and
+      software.
+
+    </p>
+
+
+    <div class="about-grid">
+
+      <div class="about-panel">
+
+        <h3>
+          What I work on
+        </h3>
+
+        <p>
+
+          Data analysis, business intelligence,
+          SQL-based analytics, Power BI reporting,
+          Python workflows, data engineering,
+          CRM automation and AI-assisted applications.
+
+        </p>
+
+      </div>
+
+
+      <div class="about-panel">
+
+        <h3>
+          How I approach projects
+        </h3>
+
+        <p>
+
+          I focus on the complete path from
+          data inputs and processing to business
+          logic, analytics, interfaces and
+          documented implementation.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-label">
+      Skills
+    </div>
+
+    <h2 class="section-title">
+      Technology stack
+    </h2>
+
+    <p class="section-description">
+      Technologies demonstrated across my projects.
+    </p>
+
+
+    <div class="skills-grid">
+
+
+      <div class="skill-group">
+
+        <h3>Data & Analytics</h3>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Jupyter</span>
+        </div>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>Data Engineering</h3>
+
+        <div class="tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Docker</span>
+          <span class="tag">ETL</span>
+        </div>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>AI & Applications</h3>
+
+        <div class="tags">
+          <span class="tag">OpenAI API</span>
+          <span class="tag">AI Extraction</span>
+          <span class="tag">pgvector</span>
+          <span class="tag">React</span>
+          <span class="tag">APIs</span>
+        </div>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>Business Systems</h3>
+
+        <div class="tags">
+          <span class="tag">Salesforce</span>
+          <span class="tag">Flow Builder</span>
+          <span class="tag">CRM</span>
+          <span class="tag">RevOps</span>
+          <span class="tag">BI Reporting</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+  <div class="container">
+
+    <div class="section-label">
+      Selected Work
+    </div>
+
+    <h2 class="section-title">
+      Featured projects
+    </h2>
+
+    <p class="section-description">
+
+      A selected set of projects from my GitHub,
+      chosen to represent analytics, data engineering,
+      enterprise automation and AI capabilities.
+
+    </p>
+
+
+    <div class="projects-grid">
+
+
+      <!-- PROJECT 1 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 01 • AI ENGINEERING
+        </div>
+
+        <h3>
+          Enterprise AI Invoice Processing Platform
+        </h3>
+
+        <p>
+
+          Enterprise-style invoice workflow that
+          accepts invoice files, extracts structured
+          information with AI, validates business
+          rules, supports human review and records
+          audit activity.
+
+        </p>
+
+        <div class="project-tech">
+          <span>Python</span>
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
+          <span>Redis</span>
+          <span>OpenAI</span>
+          <span>pgvector</span>
+          <span>React</span>
+          <span>Docker</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a class="project-link"
+             target="_blank"
+             href="https://github.com/gawandeshil03-ops/FDE-Enterprise-AI-Invoice-Processing-Platform">
+            View Repository ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PROJECT 2 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 02 • SUPPLY CHAIN
+        </div>
+
+        <h3>
+          SupplyIQ
+        </h3>
+
+        <p>
+
+          Supply-chain analytics project combining
+          Python processing, SQL data layers,
+          dimensional datasets, Jupyter analysis
+          and Power BI reporting.
+
+        </p>
+
+        <div class="project-tech">
+          <span>Python</span>
+          <span>SQL</span>
+          <span>Power BI</span>
+          <span>Jupyter</span>
+          <span>CSV</span>
+          <span>Analytics</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a class="project-link"
+             target="_blank"
+             href="https://github.com/gawandeshil03-ops/supplyiq-portfolio">
+            View Repository ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PROJECT 3 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 03 • BUSINESS INTELLIGENCE
+        </div>
+
+        <h3>
+          Enterprise BI & Data Warehouse Analytics
+        </h3>
+
+        <p>
+
+          Business intelligence and data warehouse
+          project demonstrating SQL, SQL Server,
+          Jupyter-based analysis and Power BI
+          reporting across a structured analytics
+          workflow.
+
+        </p>
+
+        <div class="project-tech">
+          <span>SQL</span>
+          <span>SQL Server</span>
+          <span>Power BI</span>
+          <span>Jupyter</span>
+          <span>Data Warehouse</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a class="project-link"
+             target="_blank"
+             href="https://github.com/gawandeshil03-ops/enterprise-bi-data-warehouse-portfolio">
+            View Repository ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PROJECT 4 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 04 • CRM & REVOPS
+        </div>
+
+        <h3>
+          Salesforce RevOps Automation Portfolio
+        </h3>
+
+        <p>
+
+          A connected Salesforce portfolio for a
+          fictional B2B SaaS organization covering
+          permission architecture, automated lead
+          scoring and revenue forecasting.
+
+        </p>
+
+        <div class="project-tech">
+          <span>Salesforce</span>
+          <span>Flow Builder</span>
+          <span>Excel</span>
+          <span>Power BI</span>
+          <span>DAX</span>
+          <span>RevOps</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a class="project-link"
+             target="_blank"
+             href="https://github.com/gawandeshil03-ops/Salesforce-RevOps-Automation-Portfolio">
+            View Repository ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PROJECT 5 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 05 • MACHINE LEARNING
+        </div>
+
+        <h3>
+          Telecom Churn Intelligence System
+        </h3>
+
+        <p>
+
+          Customer-retention analytics system
+          containing Python processing, SQL,
+          notebooks, a persisted model artifact,
+          Docker configuration and supporting
+          application components.
+
+        </p>
+
+        <div class="project-tech">
+          <span>Python</span>
+          <span>SQL</span>
+          <span>Machine Learning</span>
+          <span>Docker</span>
+          <span>Jupyter</span>
+          <span>Churn Analytics</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a class="project-link"
+             target="_blank"
+             href="https://github.com/gawandeshil03-ops/telecom-churn-intelligence-system-portfolio">
+            View Repository ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PROJECT 6 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 06 • DATA ENGINEERING
+        </div>
+
+        <h3>
+          API-Driven ETL Data Pipeline
+        </h3>
+
+        <p>
+
+          API-based data pipeline demonstrating
+          ingestion, validation, transformation,
+          Redis caching, PostgreSQL storage,
+          FastAPI retrieval and Docker-based
+          orchestration.
+
+        </p>
+
+        <div class="project-tech">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
+          <span>Redis</span>
+          <span>Docker</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a class="project-link"
+             target="_blank"
+             href="https://github.com/gawandeshil03-ops/API-Driven-ETL-Data-Pipeline">
+            View Repository ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- CAPABILITIES -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      Focus Areas
+    </div>
+
+    <h2 class="section-title">
+      What I build
+    </h2>
+
+
+    <div class="capability-grid">
+
+
+      <div class="capability">
+
+        <div class="capability-icon">
+          📊
+        </div>
+
+        <h3>
+          Analytics
+        </h3>
+
+        <p>
+          Business analysis, SQL analytics,
+          KPI reporting and decision-support
+          workflows.
+        </p>
+
+      </div>
+
+
+      <div class="capability">
+
+        <div class="capability-icon">
+          📈
+        </div>
+
+        <h3>
+          Business Intelligence
+        </h3>
+
+        <p>
+          Power BI dashboards, dimensional
+          models and business reporting.
+        </p>
+
+      </div>
+
+
+      <div class="capability">
+
+        <div class="capability-icon">
+          ⚙️
+        </div>
+
+        <h3>
+          Data Engineering
+        </h3>
+
+        <p>
+          ETL pipelines, APIs, databases,
+          data transformation and automation.
+        </p>
+
+      </div>
+
+
+      <div class="capability">
+
+        <div class="capability-icon">
+          🤖
+        </div>
+
+        <h3>
+          Applied AI
+        </h3>
+
+        <p>
+          AI-enabled workflows, structured
+          extraction, vector search and
+          intelligent applications.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="cta">
+
+      <div class="section-label">
+        Contact
+      </div>
+
+      <h2>
+        Interested in my work?
+      </h2>
+
+      <p>
+
+        Explore my GitHub repositories or
+        connect with me on LinkedIn to discuss
+        data, analytics, business intelligence,
+        automation and technology opportunities.
+
+      </p>
+
+      <div class="button-row"
+           style="justify-content:center">
+
+        <a class="button button-primary"
+           target="_blank"
+           href="https://www.linkedin.com/in/shilgawande2004">
+          Connect on LinkedIn
+        </a>
+
+        <a class="button button-secondary"
+           target="_blank"
+           href="https://github.com/gawandeshil03-ops">
+          View GitHub
+        </a>
+
+        <a class="button button-secondary"
+           href="mailto:gawandeshil9@gmail.com">
+          Email Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+      © <span id="year"></span> Shil Gawande
+    </div>
+
+    <div class="footer-links">
+
+      <a target="_blank"
+         href="https://github.com/gawandeshil03-ops">
+        GitHub
+      </a>
+
+      <a target="_blank"
+         href="https://www.linkedin.com/in/shilgawande2004">
+        LinkedIn
+      </a>
+
+      <a href="#home">
+        Back to top ↑
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
 
 </body>
 </html>
