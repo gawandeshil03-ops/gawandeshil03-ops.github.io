@@ -1,0 +1,45 @@
+SHIL GAWANDE PORTFOLIO - GITHUB PAGES DEPLOYMENT
+
+Target repository:
+https://github.com/gawandeshil03-ops/gawandeshil03-ops.github.io
+
+IMPORTANT:
+Upload the CONTENTS of this folder to the repository root, not the containing folder itself.
+Keep the HTML5 UP LICENSE.txt file because the site uses the Dimension template under its license.
+
+FILES/FOLDERS TO UPLOAD:
+- index.html
+- LICENSE.txt
+- README.txt
+- DEPLOY_TO_GITHUB.txt (optional)
+- assets/  (entire folder)
+- images/  (entire folder)
+
+OPTIONAL RESUME:
+Add your resume PDF to the repository root with the exact filename:
+resume.pdf
+Then the Resume button will work automatically.
+
+GITHUB WEB UPLOAD METHOD:
+1. Open your portfolio repo.
+2. Click Add file > Upload files.
+3. Drag all files/folders from this extracted package into GitHub.
+4. If GitHub does not accept folders in your browser, upload the package using GitHub Desktop/Git, or upload folder contents in batches.
+5. Commit directly to main.
+6. GitHub Pages will redeploy automatically.
+7. Wait about 1-3 minutes.
+8. Open:
+   https://gawandeshil03-ops.github.io/
+9. Hard refresh with Ctrl+F5 if the old page is cached.
+
+RECOMMENDED GIT METHOD (fastest for whole folders):
+1. Download/clone your GitHub Pages repo locally.
+2. Copy index.html, assets/, images/, LICENSE.txt and README.txt into the repo root.
+3. Run:
+   git add .
+   git commit -m "Deploy Dimension portfolio"
+   git push origin main
+
+NOTES:
+- The two architecture visuals inside the site are loaded from your public GitHub repositories.
+- The background image and core Dimension assets are included locally in the images/assets folders.
